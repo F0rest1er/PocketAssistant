@@ -1,0 +1,14 @@
+{
+  "name": "Pocket Assistant",
+  "short_name": "PA",
+  "icons": [
+    {
+      "src": "/img/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2ecc71",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
