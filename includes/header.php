@@ -22,11 +22,11 @@
             </a>
           </div>
           <ul class="nav-links">
-            <li><a href="/checker" <?php echo $currentPage === 'checker' ? 'class="active"' : ''; ?>>Поиск по номеру</a></li>
             <li><a href="/generator" <?php echo $currentPage === 'generator' ? 'class="active"' : ''; ?>>Генератор паролей</a></li>
             <li><a href="/random" <?php echo $currentPage === 'random' ? 'class="active"' : ''; ?>>Случайные числа</a></li>
             <li><a href="/converter" <?php echo $currentPage === 'converter' ? 'class="active"' : ''; ?>>Конвертер</a></li>
             <li><a href="/wheel" <?php echo $currentPage === 'wheel' ? 'class="active"' : ''; ?>>Колесо фортуны</a></li>
+            <li><a href="/check_password" <?php echo $currentPage === 'check-password' ? 'class="active"' : ''; ?>>Проверка пароля</a></li>
           </ul>
         </div>
         <div class="nav-right">

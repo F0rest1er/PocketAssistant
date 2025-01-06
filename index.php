@@ -9,16 +9,10 @@ include 'includes/header.php';
   
   <div class="features">
     <div class="feature-card">
-      <i class="fas fa-phone-alt"></i>
-      <h2>Поиск по номеру</h2>
-      <p>Получите информацию о любом номере телефона: оператор, регион, тип номера.</p>
-      <a href="/checker" class="feature-btn">Проверить номер</a>
-    </div>
-    <div class="feature-card">
-        <i class="fas fa-key"></i>
-        <h2>Генератор паролей</h2>
-        <p>Создавайте надежные пароли с настраиваемыми параметрами.</p>
-        <a href="/generator" class="feature-btn">Создать пароль</a>
+      <i class="fas fa-key"></i>
+      <h2>Генератор паролей</h2>
+      <p>Создавайте надежные пароли с настраиваемыми параметрами.</p>
+      <a href="/generator" class="feature-btn">Создать пароль</a>
     </div>
     <div class="feature-card">
         <i class="fas fa-dice"></i>
@@ -38,11 +32,17 @@ include 'includes/header.php';
         <p>Случайный выбор с красивой анимацией вращения колеса.</p>
         <a href="/wheel" class="feature-btn">Запустить колесо</a>
     </div>
+    <div class="feature-card">
+        <i class="fas fa-shield-alt"></i>
+        <h2>Проверка пароля</h2>
+        <p>Проверьте надежность вашего пароля и получите рекомендации по улучшению.</p>
+        <a href="/check-password" class="feature-btn">Проверить пароль</a>
+    </div>
   </div>
 
   <div class="about-section">
     <h2>О проекте</h2>
-    <p>Pocket Assistant - это многофункциональный онлайн-инструмент, который поможет вам в решении повседневных задач. От проверки информации о телефонных номерах до генерации паролей и конвертации изображений - всё необходимое собрано в одном месте.</p>
+    <p>Pocket Assistant - это многофункциональный онлайн-инструмент, который поможет вам в решении повседневных задач. От генерации надежных паролей до конвертации изображений и случайного выбора - всё необходимое собрано в одном месте.</p>
     
     <div class="advantages">
         <div class="advantage">
