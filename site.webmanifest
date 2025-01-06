@@ -1,14 +1,19 @@
 {
-  "name": "Pocket Assistant",
-  "short_name": "PA",
+  "name": "Pocket Assistant - Набор онлайн инструментов",
+  "short_name": "Pocket Assistant",
+  "description": "Генератор паролей, проверка надежности, конвертер изображений и другие полезные инструменты",
   "icons": [
     {
       "src": "/img/favicon.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#2ecc71",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4caf50",
+  "background_color": "#f5f7fa",
+  "orientation": "portrait",
+  "categories": ["utilities", "tools", "productivity"]
 }
