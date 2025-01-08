@@ -15,19 +15,30 @@
   <body>
     <header>
       <nav>
-        <div class="nav-left">
+        <a href="/" class="logo-link">
           <div class="logo">
-            <a href="/" class="logo-link">
-              <span>Pocket Assistant</span>
-            </a>
+            <span>Pocket Assistant</span>
           </div>
-          <ul class="nav-links">
-            <li><a href="/generator" <?php echo $currentPage === 'generator' ? 'class="active"' : ''; ?>>Генератор паролей</a></li>
-            <li><a href="/random" <?php echo $currentPage === 'random' ? 'class="active"' : ''; ?>>Случайные числа</a></li>
-            <li><a href="/converter" <?php echo $currentPage === 'converter' ? 'class="active"' : ''; ?>>Конвертер</a></li>
-            <li><a href="/wheel" <?php echo $currentPage === 'wheel' ? 'class="active"' : ''; ?>>Колесо фортуны</a></li>
-            <li><a href="/check_password" <?php echo $currentPage === 'check-password' ? 'class="active"' : ''; ?>>Проверка пароля</a></li>
-          </ul>
+        </a>
+        <div class="nav-links">
+          <a href="/generator" <?php echo $currentPage === 'generator' ? 'class="active"' : ''; ?>>
+            <span>Генератор паролей</span>
+          </a>
+          <a href="/random" <?php echo $currentPage === 'random' ? 'class="active"' : ''; ?>>
+            <span>Случайные числа</span>
+          </a>
+          <a href="/converter" <?php echo $currentPage === 'converter' ? 'class="active"' : ''; ?>>
+            <span>Конвертер</span>
+          </a>
+          <a href="/check_password" <?php echo $currentPage === 'check-password' ? 'class="active"' : ''; ?>>
+            <span>Проверка пароля</span>
+          </a>
+          <a href="/wheel" <?php echo $currentPage === 'wheel' ? 'class="active"' : ''; ?>>
+            <span>Колесо фортуны</span>
+          </a>
+          <a href="/coin" <?php echo $currentPage === 'coin' ? 'class="active"' : ''; ?>>
+            <span>Монетка</span>
+          </a>
         </div>
         <div class="nav-right">
           <div class="theme-toggle">

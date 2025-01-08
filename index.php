@@ -38,6 +38,12 @@ include 'includes/header.php';
         <p>Проверьте надежность вашего пароля и получите рекомендации по улучшению.</p>
         <a href="/check-password" class="feature-btn">Проверить пароль</a>
     </div>
+    <div class="feature-card">
+        <i class="fas fa-coins"></i>
+        <h2>Подбрасывание монетки</h2>
+        <p>Простой способ принять решение, когда есть только два варианта.</p>
+        <a href="/coin.php" class="feature-btn">Подбросить</a>
+    </div>
   </div>
 
   <div class="about-section">

@@ -12,7 +12,10 @@ class FortuneWheel {
     this.options = ["Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4"];
     this.rotation = 0;
     this.isSpinning = false;
-    this.colors = ["#4a90e2", "#5c6bc0", "#3f51b5", "#7986cb"];
+    this.colors = ["#4a90e2", "#e6194b", "#3cb44b", "#ffe119", "#911eb4", "#f58231", "#42d4f4", "#f032e6", "#bfef45", "#fabed4", "#469990", "#dcbeff"];
+
+    this.colorIndices = [];
+    this.initColorIndices();
 
     this.init();
   }
@@ -59,26 +62,21 @@ class FortuneWheel {
     this.ctx.restore();
   }
 
-  calculateColorIndices() {
-    let colorIndices = [];
+  initColorIndices() {
     for (let i = 0; i < this.options.length; i++) {
-      let availableColors = [...Array(this.colors.length).keys()];
-
-      if (i > 0) {
-        availableColors = availableColors.filter((c) => c !== colorIndices[i - 1]);
-      }
-      if (i === this.options.length - 1 && colorIndices[0] !== undefined) {
-        availableColors = availableColors.filter((c) => c !== colorIndices[0]);
-      }
-
-      const randomIndex = Math.floor(Math.random() * availableColors.length);
-      colorIndices[i] = availableColors[randomIndex];
+      this.colorIndices[i] = i % this.colors.length;
     }
-    return colorIndices;
+  }
+
+  calculateColorIndices() {
+    if (this.colorIndices.length !== this.options.length) {
+      this.initColorIndices();
+    }
+    return this.colorIndices;
   }
 
   drawSectors(radius, colorIndices) {
-    const sliceAngle = (2 * Math.PI) / this.options.length;
+    const sliceAngle = (Math.PI * 2) / this.options.length;
 
     this.options.forEach((option, i) => {
       this.ctx.beginPath();
@@ -90,18 +88,14 @@ class FortuneWheel {
       this.ctx.fill();
       this.ctx.stroke();
 
-      this.drawSectorText(option, i, sliceAngle, radius);
+      this.ctx.save();
+      this.ctx.rotate(i * sliceAngle + sliceAngle / 2);
+      this.ctx.textAlign = "right";
+      this.ctx.fillStyle = "#ffffff";
+      this.ctx.font = `${radius / 15}px Arial`;
+      this.ctx.fillText(option, radius - 20, 5);
+      this.ctx.restore();
     });
-  }
-
-  drawSectorText(text, index, sliceAngle, radius) {
-    this.ctx.save();
-    this.ctx.rotate(index * sliceAngle + sliceAngle / 2);
-    this.ctx.textAlign = "right";
-    this.ctx.fillStyle = "#ffffff";
-    this.ctx.font = `${radius / 15}px Arial`;
-    this.ctx.fillText(text, radius - 20, 0);
-    this.ctx.restore();
   }
 
   spin() {
@@ -109,11 +103,11 @@ class FortuneWheel {
     this.isSpinning = true;
     this.result.textContent = "";
 
-    const spinDuration = 5000;
-    const spinRevolutions = 10;
     const startRotation = this.rotation;
+    const spinRevolutions = 10;
     const targetRotation = startRotation + Math.PI * 2 * spinRevolutions + Math.random() * Math.PI * 2;
     const startTime = performance.now();
+    const spinDuration = 5000;
 
     const animate = (currentTime) => {
       const elapsed = currentTime - startTime;
@@ -135,9 +129,13 @@ class FortuneWheel {
 
   finishSpin() {
     this.isSpinning = false;
-    const winningIndex = Math.floor(this.options.length - ((this.rotation % (Math.PI * 2)) / (Math.PI * 2)) * this.options.length) % this.options.length;
-    this.result.textContent = `Выпало: ${this.options[winningIndex]}`;
-    this.result.style.opacity = 1;
+    const normalizedRotation = this.rotation % (Math.PI * 2);
+    const positiveRotation = normalizedRotation < 0 ? normalizedRotation + Math.PI * 2 : normalizedRotation;
+
+    const sectorAngle = (Math.PI * 2) / this.options.length;
+    const winningIndex = Math.floor(positiveRotation / sectorAngle);
+
+    this.result.textContent = "";
   }
 
   updateOptionsList() {
