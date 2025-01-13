@@ -28,6 +28,12 @@ include 'includes/header.php';
                 <li>Поддержка и обновление проекта</li>
             </ul>
         </div>
+        <div class="donate-features supporters-list">
+            <h2>Поддержавшие проект:</h2>
+            <ol>
+                <?/*<li></li>*/?>
+            </ol>
+        </div>
     </div>
 </div>
 

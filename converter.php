@@ -9,24 +9,16 @@ include 'includes/header.php';
     <div class="converter-form">
         <div class="upload-area" id="dropZone">
             <i class="fas fa-cloud-upload-alt"></i>
-            <p>Перетащите изображение сюда или</p>
+            <p>Перетащите изображения сюда или</p>
             <label class="upload-btn">
-                Выберите файл
-                <input type="file" id="fileInput" accept="image/*" hidden>
+                Выберите файлы
+                <input type="file" id="fileInput" accept="image/*" multiple hidden>
             </label>
             <p class="formats-info">Поддерживаемые форматы: JPG, PNG, WEBP, BMP, GIF</p>
         </div>
 
         <div class="preview-area" id="previewArea" style="display: none;">
-            <div class="image-preview">
-                <img id="imagePreview" src="" alt="Предпросмотр">
-                <div class="image-info">
-                    <span id="imageName"></span>
-                    <span id="imageSize"></span>
-                    <span id="imageFormat"></span>
-                </div>
-            </div>
-
+            <div id="imagePreviews" class="image-preview"></div>
             <div class="conversion-options">
                 <div class="option-group">
                     <label>Конвертировать в:</label>
@@ -48,17 +40,11 @@ include 'includes/header.php';
         </div>
 
         <div class="result-area" id="resultArea" style="display: none;">
-            <h3>Результат конвертации</h3>
-            <div class="converted-image">
-                <img id="convertedImage" src="" alt="Конвертированное изображение">
-                <div class="image-info">
-                    <span id="convertedName"></span>
-                    <span id="convertedSize"></span>
-                </div>
+            <h2 class="result-title-h2">Результат конвертации</h2>
+            <button id="downloadAllBtn" class="download-all-btn">Скачать все</button>
+            <div id="convertedImages" class="converted-image">
+               
             </div>
-            <button id="downloadBtn" class="download-btn">
-                <i class="fas fa-download"></i> Скачать
-            </button>
         </div>
     </div>
 </div>

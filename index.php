@@ -36,7 +36,7 @@ include 'includes/header.php';
         <i class="fas fa-shield-alt"></i>
         <h2>Проверка пароля</h2>
         <p>Проверьте надежность вашего пароля и получите рекомендации по улучшению.</p>
-        <a href="/check-password" class="feature-btn">Проверить пароль</a>
+        <a href="/check_password" class="feature-btn">Проверить пароль</a>
     </div>
     <div class="feature-card">
         <i class="fas fa-coins"></i>

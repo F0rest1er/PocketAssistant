@@ -2,21 +2,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const dropZone = document.getElementById("dropZone");
   const fileInput = document.getElementById("fileInput");
   const previewArea = document.getElementById("previewArea");
-  const imagePreview = document.getElementById("imagePreview");
-  const imageName = document.getElementById("imageName");
-  const imageSize = document.getElementById("imageSize");
-  const imageFormat = document.getElementById("imageFormat");
+  const imagePreviews = document.getElementById("imagePreviews");
   const formatSelect = document.getElementById("formatSelect");
   const qualityRange = document.getElementById("qualityRange");
   const qualityValue = document.getElementById("qualityValue");
   const convertBtn = document.getElementById("convertBtn");
   const resultArea = document.getElementById("resultArea");
-  const convertedImage = document.getElementById("convertedImage");
-  const convertedName = document.getElementById("convertedName");
-  const convertedSize = document.getElementById("convertedSize");
-  const downloadBtn = document.getElementById("downloadBtn");
+  const convertedImages = document.getElementById("convertedImages");
+  const downloadAllBtn = document.getElementById("downloadAllBtn");
 
-  let originalFile = null;
+  let originalFiles = [];
+  let convertedUrls = [];
 
   dropZone.addEventListener("dragover", (e) => {
     e.preventDefault();
@@ -30,123 +26,124 @@ document.addEventListener("DOMContentLoaded", function () {
   dropZone.addEventListener("drop", (e) => {
     e.preventDefault();
     dropZone.classList.remove("dragover");
-    handleFile(e.dataTransfer.files[0]);
+    handleFiles(e.dataTransfer.files);
   });
 
   fileInput.addEventListener("change", (e) => {
-    handleFile(e.target.files[0]);
+    handleFiles(e.target.files);
   });
 
   qualityRange.addEventListener("input", () => {
     qualityValue.textContent = qualityRange.value + "%";
   });
 
-  formatSelect.addEventListener("change", () => {
-    const isPNG = formatSelect.value === "png";
-    document.getElementById("pngOptions").style.display = isPNG ? "block" : "none";
-    document.getElementById("qualityRange").parentElement.style.display = formatSelect.value === "jpg" || formatSelect.value === "webp" ? "block" : "none";
-  });
+  function handleFiles(files) {
+    originalFiles = Array.from(files);
+    previewArea.style.display = "block";
+    imagePreviews.innerHTML = "";
 
-  function handleFile(file) {
-    if (!file || !file.type.startsWith("image/")) {
-      alert("Пожалуйста, выберите изображение");
-      return;
-    }
+    originalFiles.forEach((file) => {
+      if (!file.type.startsWith("image/")) {
+        alert("Пожалуйста, выберите изображение");
+        return;
+      }
 
-    originalFile = file;
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-      imagePreview.src = e.target.result;
-      imageName.textContent = file.name;
-      imageSize.textContent = formatSize(file.size);
-      imageFormat.textContent = file.type.split("/")[1].toUpperCase();
-      previewArea.style.display = "block";
-      resultArea.style.display = "none";
-    };
-
-    reader.readAsDataURL(file);
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.alt = file.name;
+        img.style.maxWidth = "100px";
+        img.style.margin = "5px";
+        imagePreviews.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
   }
 
   convertBtn.addEventListener("click", () => {
-    if (!originalFile) return;
+    if (originalFiles.length === 0) return;
 
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    const img = new Image();
+    const format = formatSelect.value;
+    const quality = qualityRange.value / 100;
 
-    img.onload = () => {
-      let width = img.width;
-      let height = img.height;
-      const MAX_SIZE = 2048;
+    convertedImages.innerHTML = "";
+    convertedUrls = [];
 
-      if (width > MAX_SIZE || height > MAX_SIZE) {
-        if (width > height) {
-          height = Math.round((height * MAX_SIZE) / width);
-          width = MAX_SIZE;
-        } else {
-          width = Math.round((width * MAX_SIZE) / height);
-          height = MAX_SIZE;
-        }
-      }
+    originalFiles.forEach((originalFile) => {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      const img = new Image();
 
-      canvas.width = width;
-      canvas.height = height;
+      img.onload = () => {
+        let width = img.width;
+        let height = img.height;
+        const MAX_SIZE = 2048;
 
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = "high";
-      ctx.drawImage(img, 0, 0, width, height);
-
-      const format = formatSelect.value;
-      const quality = qualityRange.value / 100;
-
-      let mimeType = "image/jpeg";
-      let blobQuality = quality;
-
-      switch (format) {
-        case "png":
-          mimeType = "image/png";
-          blobQuality = undefined;
-          break;
-        case "webp":
-          mimeType = "image/webp";
-          break;
-        case "bmp":
-          mimeType = "image/bmp";
-          blobQuality = undefined;
-          break;
-        case "gif":
-          mimeType = "image/gif";
-          blobQuality = undefined;
-          break;
-      }
-
-      canvas.toBlob(
-        (blob) => {
-          const url = URL.createObjectURL(blob);
-          convertedImage.src = url;
-          convertedName.textContent = `${originalFile.name.split(".")[0]}.${format}`;
-          convertedSize.textContent = formatSize(blob.size);
-          resultArea.style.display = "block";
-
-          if (convertedImage.previousURL) {
-            URL.revokeObjectURL(convertedImage.previousURL);
+        if (width > MAX_SIZE || height > MAX_SIZE) {
+          if (width > height) {
+            height = Math.round((height * MAX_SIZE) / width);
+            width = MAX_SIZE;
+          } else {
+            width = Math.round((width * MAX_SIZE) / height);
+            height = MAX_SIZE;
           }
-          convertedImage.previousURL = url;
+        }
 
-          downloadBtn.onclick = () => {
-            const link = document.createElement("a");
-            link.href = url;
-            link.download = `${originalFile.name.split(".")[0]}_converted.${format}`;
-            link.click();
-          };
-        },
-        mimeType,
-        blobQuality
-      );
-    };
+        canvas.width = width;
+        canvas.height = height;
 
-    img.src = URL.createObjectURL(originalFile);
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = "high";
+        ctx.drawImage(img, 0, 0, width, height);
+
+        canvas.toBlob(
+          (blob) => {
+            const url = URL.createObjectURL(blob);
+            convertedUrls.push(url);
+
+            const convertedImg = document.createElement("img");
+            convertedImg.src = url;
+            convertedImg.alt = originalFile.name;
+            convertedImg.style.maxWidth = "100px";
+
+            const convertedImgContainer = document.createElement("div");
+            convertedImgContainer.appendChild(convertedImg);
+
+            const sizeInfo = document.createElement("div");
+            sizeInfo.textContent = `Размер после конвертации: ${formatSize(blob.size)}`;
+            convertedImgContainer.appendChild(sizeInfo);
+
+            const downloadBtn = document.createElement("button");
+            downloadBtn.textContent = "Скачать";
+            downloadBtn.onclick = () => {
+              const link = document.createElement("a");
+              link.href = url;
+              link.download = `${originalFile.name.split(".")[0]}_converted.${format}`;
+              link.click();
+            };
+            convertedImgContainer.appendChild(downloadBtn);
+
+            convertedImages.appendChild(convertedImgContainer);
+          },
+          `image/${format}`,
+          quality
+        );
+      };
+
+      img.src = URL.createObjectURL(originalFile);
+    });
+
+    resultArea.style.display = "block";
+  });
+
+  downloadAllBtn.addEventListener("click", () => {
+    convertedUrls.forEach((url, index) => {
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${originalFiles[index].name.split(".")[0]}_converted.${formatSelect.value}`;
+      link.click();
+    });
   });
 
   function formatSize(bytes) {
