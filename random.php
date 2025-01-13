@@ -1,5 +1,6 @@
 <?php 
 $pageTitle = 'Генератор случайных чисел - Pocket Assistant';
+$pageDescription = 'Генерируйте случайные числа с настраиваемыми параметрами с помощью Pocket Assistant.';
 $currentPage = 'random';
 include 'includes/header.php'; 
 ?>

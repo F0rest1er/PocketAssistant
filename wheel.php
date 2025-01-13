@@ -1,5 +1,6 @@
 <?php 
 $pageTitle = 'Колесо фортуны - Pocket Assistant';
+$pageDescription = 'Используйте колесо фортуны для случайного выбора с помощью Pocket Assistant.';
 $currentPage = 'wheel';
 include 'includes/header.php'; 
 ?>

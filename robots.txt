@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /404
+Disallow: /donate
+Disallow: /privacy
+Disallow: /includes/
+Disallow: /js/
+Disallow: /css/
+Disallow: /img/
+Disallow: /site.webmanifest
+
+Allow: /

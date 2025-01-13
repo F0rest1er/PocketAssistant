@@ -1,8 +1,25 @@
 <?php 
 $pageTitle = 'Поддержать проект - Pocket Assistant';
+$pageDescription = 'Поддержите проект Pocket Assistant и помогите нам развивать его. Узнайте, на что пойдут средства.';
 $currentPage = 'donate';
 include 'includes/header.php'; 
 ?>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Поддержать проект - Pocket Assistant",
+  "description": "Поддержите проект Pocket Assistant и помогите нам развивать его. Узнайте, на что пойдут средства.",
+  "url": "https://pocket-assistant.ru/donate",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Pocket Assistant",
+    "url": "https://pocket-assistant.ru",
+    "logo": "https://pocket-assistant.ru/img/favicon.png"
+  }
+}
+</script>
 
 <div class="container">
     <h1>Поддержать проект</h1>

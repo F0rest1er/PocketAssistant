@@ -1,5 +1,6 @@
 <?php 
 $pageTitle = 'Страница не найдена - Pocket Assistant';
+$pageDescription = 'К сожалению, запрашиваемая страница не найдена. Вернитесь на главную страницу.';
 $currentPage = '404';
 include 'includes/header.php'; 
 ?>
@@ -15,5 +16,20 @@ include 'includes/header.php';
         </a>
     </div>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Страница не найдена - Pocket Assistant",
+  "description": "К сожалению, запрашиваемая страница не найдена. Вернитесь на главную страницу.",
+  "url": "https://pocket-assistant.ru/404",
+  "mainEntity": {
+    "@type": "WebSite",
+    "name": "Pocket Assistant",
+    "url": "https://pocket-assistant.ru"
+  }
+}
+</script>
 
 <?php include 'includes/footer.php'; ?> 

@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php echo $pageTitle ?? 'Pocket Assistant'; ?></title>
-    
+    <meta name="description" content="<?php echo $pageDescription; ?>" />
+
     <link rel="icon" type="image/png" href="/img/favicon.png">
     <link rel="apple-touch-icon" href="/img/favicon.png">
     <link rel="manifest" href="/site.webmanifest">
     
+    <meta property="og:title" content="<?php echo $pageTitle ?? 'Pocket Assistant'; ?>" />
+    <meta property="og:description" content="Pocket Assistant - ваш карманный помощник для генерации паролей, конвертации изображений и других полезных инструментов." />
+    <meta property="og:image" content="/img/favicon.ong" />
+    <meta property="og:url" content="<?php echo 'https://pocket-assistant.ru' . $_SERVER['REQUEST_URI']; ?>" />
+    <meta property="og:type" content="website" />
+    
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />  
   </head>
   <body>
     <header>
@@ -53,5 +60,18 @@
         </div>
       </nav>
     </header>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Pocket Assistant",
+      "url": "https://pocket-assistant.ru",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://pocket-assistant.ru/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </body>
 </html> 

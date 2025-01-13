@@ -1,5 +1,6 @@
 <?php 
 $pageTitle = 'Конвертер изображений - Pocket Assistant';
+$pageDescription = 'Конвертируйте изображения в различные форматы с настройкой качества с помощью Pocket Assistant.';
 $currentPage = 'converter';
 include 'includes/header.php'; 
 ?>
@@ -50,4 +51,18 @@ include 'includes/header.php';
 </div>
 
 <script src="/js/converter.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Конвертер изображений - Pocket Assistant",
+  "description": "Конвертируйте изображения в различные форматы с настройкой качества с помощью Pocket Assistant.",
+  "url": "https://pocket-assistant.ru/converter",
+  "mainEntity": {
+    "@type": "WebSite",
+    "name": "Pocket Assistant",
+    "url": "https://pocket-assistant.ru"
+  }
+}
+</script>
 <?php include 'includes/footer.php'; ?> 

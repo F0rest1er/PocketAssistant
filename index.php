@@ -1,8 +1,24 @@
 <?php 
 $pageTitle = 'Pocket Assistant - Ваш карманный помощник';
+$pageDescription = 'Добро пожаловать в Pocket Assistant. Генератор паролей, конвертер изображений и другие полезные инструменты.';
 $currentPage = 'home';
 include 'includes/header.php'; 
 ?>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pocket Assistant - Ваш карманный помощник",
+  "description": "Добро пожаловать в Pocket Assistant. Генератор паролей, конвертер изображений и другие полезные инструменты.",
+  "url": "https://pocket-assistant.ru/",
+  "mainEntity": {
+    "@type": "WebSite",
+    "name": "Pocket Assistant",
+    "url": "https://pocket-assistant.ru"
+  }
+}
+</script>
 
 <div class="container home-page">
   <h1>Добро пожаловать в Pocket Assistant</h1>
