@@ -2,6 +2,7 @@
 $pageTitle = 'Генератор паролей - Pocket Assistant';
 $pageDescription = 'Создавайте надежные пароли с помощью генератора паролей Pocket Assistant. Настройте параметры и получите уникальные пароли.';
 $currentPage = 'generator';
+$canonical = 'https://pocket-assistant.ru/generator';
 include 'includes/header.php'; 
 ?>
 

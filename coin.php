@@ -2,6 +2,7 @@
 $pageTitle = 'Подбрасывание монетки - Pocket Assistant';
 $pageDescription = 'Простой способ принять решение с помощью подбрасывания монетки в Pocket Assistant.';
 $currentPage = 'coin';
+$canonical = 'https://pocket-assistant.ru/coin';
 include 'includes/header.php'; 
 ?>
 
@@ -31,4 +32,5 @@ include 'includes/header.php';
   }
 }
 </script>
+
 <?php include 'includes/footer.php'; ?> 

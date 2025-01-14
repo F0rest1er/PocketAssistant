@@ -2,6 +2,7 @@
 $pageTitle = 'Страница не найдена - Pocket Assistant';
 $pageDescription = 'К сожалению, запрашиваемая страница не найдена. Вернитесь на главную страницу.';
 $currentPage = '404';
+$canonical = 'https://pocket-assistant.ru/404';
 include 'includes/header.php'; 
 ?>
 

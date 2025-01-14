@@ -2,6 +2,7 @@
 $pageTitle = 'Конвертер изображений - Pocket Assistant';
 $pageDescription = 'Конвертируйте изображения в различные форматы с настройкой качества с помощью Pocket Assistant.';
 $currentPage = 'converter';
+$canonical = 'https://pocket-assistant.ru/converter';
 include 'includes/header.php'; 
 ?>
 
@@ -65,4 +66,5 @@ include 'includes/header.php';
   }
 }
 </script>
+
 <?php include 'includes/footer.php'; ?> 

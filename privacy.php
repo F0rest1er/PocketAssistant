@@ -2,6 +2,7 @@
 $pageTitle = 'Политика конфиденциальности - Pocket Assistant';
 $pageDescription = 'Узнайте о политике конфиденциальности Pocket Assistant и о том, как мы защищаем ваши данные.';
 $currentPage = 'privacy';
+$canonical = 'https://pocket-assistant.ru/privacy';
 include 'includes/header.php'; 
 ?>
 

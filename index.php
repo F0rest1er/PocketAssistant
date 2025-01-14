@@ -2,6 +2,7 @@
 $pageTitle = 'Pocket Assistant - Ваш карманный помощник';
 $pageDescription = 'Добро пожаловать в Pocket Assistant. Генератор паролей, конвертер изображений и другие полезные инструменты.';
 $currentPage = 'home';
+$canonical = 'https://pocket-assistant.ru/';
 include 'includes/header.php'; 
 ?>
 

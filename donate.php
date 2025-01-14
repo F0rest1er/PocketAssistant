@@ -2,6 +2,7 @@
 $pageTitle = 'Поддержать проект - Pocket Assistant';
 $pageDescription = 'Поддержите проект Pocket Assistant и помогите нам развивать его. Узнайте, на что пойдут средства.';
 $currentPage = 'donate';
+$canonical = 'https://pocket-assistant.ru/donate';
 include 'includes/header.php'; 
 ?>
 
@@ -20,6 +21,8 @@ include 'includes/header.php';
   }
 }
 </script>
+
+<link rel="canonical" href="https://pocket-assistant.ru/donate" />
 
 <div class="container">
     <h1>Поддержать проект</h1>
