@@ -17,19 +17,28 @@ include 'includes/header.php';
     "@type": "WebSite",
     "name": "Pocket Assistant",
     "url": "https://pocket-assistant.ru"
+    "logo": "https://pocket-assistant.ru/img/favicon.png"
   }
 }
 </script>
 
 <div class="container home-page">
   <h1>Добро пожаловать в Pocket Assistant</h1>
-  
+  <div class="about-section">
+  <p>Для вашего удобства вы можете добавить наш сайт на главный экран вашего смартфона в виде ярлыка, который будет выглядеть как приложение. Это позволит вам открывать его быстрее и с максимальным комфортом!</p>
+  </div>
   <div class="features">
     <div class="feature-card">
       <i class="fas fa-key"></i>
       <h2>Генератор паролей</h2>
       <p>Создавайте надежные пароли с настраиваемыми параметрами.</p>
       <a href="/generator" class="feature-btn">Создать пароль</a>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-shield-alt"></i>
+        <h2>Проверка пароля</h2>
+        <p>Проверьте надежность вашего пароля и получите рекомендации по улучшению.</p>
+        <a href="/check_password" class="feature-btn">Проверить пароль</a>
     </div>
     <div class="feature-card">
         <i class="fas fa-dice"></i>
@@ -50,18 +59,23 @@ include 'includes/header.php';
         <a href="/wheel" class="feature-btn">Запустить колесо</a>
     </div>
     <div class="feature-card">
-        <i class="fas fa-shield-alt"></i>
-        <h2>Проверка пароля</h2>
-        <p>Проверьте надежность вашего пароля и получите рекомендации по улучшению.</p>
-        <a href="/check_password" class="feature-btn">Проверить пароль</a>
-    </div>
-    <div class="feature-card">
         <i class="fas fa-coins"></i>
         <h2>Подбрасывание монетки</h2>
         <p>Простой способ принять решение, когда есть только два варианта.</p>
         <a href="/coin.php" class="feature-btn">Подбросить</a>
     </div>
   </div>
+
+
+<div id="yandex_rtb_R-A-13687682-1"></div>
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-13687682-1",
+        "renderTo": "yandex_rtb_R-A-13687682-1"
+    })
+})
+</script>
 
   <div class="about-section">
     <h2>О проекте</h2>

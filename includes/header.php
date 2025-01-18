@@ -6,13 +6,14 @@
     <title><?php echo $pageTitle ?? 'Pocket Assistant'; ?></title>
     <meta name="description" content="<?php echo $pageDescription; ?>" />
 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="/img/favicon.png">
     <link rel="apple-touch-icon" href="/img/favicon.png">
     <link rel="manifest" href="/site.webmanifest">
     
     <meta property="og:title" content="<?php echo $pageTitle ?? 'Pocket Assistant'; ?>" />
-    <meta property="og:description" content="Pocket Assistant - ваш карманный помощник для генерации паролей, конвертации изображений и других полезных инструментов." />
-    <meta property="og:image" content="/img/favicon.ong" />
+    <meta property="og:description" content="<?php echo $pageDescription; ?>" />
+    <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:url" content="<?php echo 'https://pocket-assistant.ru' . $_SERVER['REQUEST_URI']; ?>" />
     <meta property="og:type" content="website" />
     
@@ -36,6 +37,9 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/99525008" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+ <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
   </head>
   <body>
     <header>
@@ -49,20 +53,23 @@
           <a href="/generator" <?php echo $currentPage === 'generator' ? 'class="active"' : ''; ?>>
             <span>Генератор паролей</span>
           </a>
+          <a href="/check_password" <?php echo $currentPage === 'check-password' ? 'class="active"' : ''; ?>>
+            <span>Проверка пароля</span>
+          </a>
           <a href="/random" <?php echo $currentPage === 'random' ? 'class="active"' : ''; ?>>
             <span>Случайные числа</span>
           </a>
           <a href="/converter" <?php echo $currentPage === 'converter' ? 'class="active"' : ''; ?>>
             <span>Конвертер</span>
           </a>
-          <a href="/check_password" <?php echo $currentPage === 'check-password' ? 'class="active"' : ''; ?>>
-            <span>Проверка пароля</span>
-          </a>
           <a href="/wheel" <?php echo $currentPage === 'wheel' ? 'class="active"' : ''; ?>>
             <span>Колесо фортуны</span>
           </a>
           <a href="/coin" <?php echo $currentPage === 'coin' ? 'class="active"' : ''; ?>>
             <span>Монетка</span>
+          </a>
+          <a href="/games" <?php echo $currentPage === 'games' ? 'class="active"' : ''; ?>>
+            <span>Игры</span>
           </a>
         </div>
         <div class="nav-right">
@@ -93,3 +100,4 @@
     </script>
   </body>
 </html>
+<?php include 'function.php'; ?>

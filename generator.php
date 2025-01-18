@@ -50,5 +50,30 @@ include 'includes/header.php';
     </div>
 </div>
 
+<div id="yandex_rtb_R-A-13687682-2"></div>
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-13687682-2",
+        "renderTo": "yandex_rtb_R-A-13687682-2"
+    })
+})
+</script>
+
 <script src="/js/generator.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Генератор паролей - Pocket Assistant",
+  "description": "Создавайте надежные пароли с помощью генератора паролей Pocket Assistant. Настройте параметры и получите уникальные пароли.",
+  "url": "https://pocket-assistant.ru/generator",
+  "mainEntity": {
+    "@type": "WebSite",
+    "name": "Pocket Assistant",
+    "url": "https://pocket-assistant.ru"
+    "logo": "https://pocket-assistant.ru/img/favicon.png"
+  }
+}
+</script>
 <?php include 'includes/footer.php'; ?> 

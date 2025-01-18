@@ -29,6 +29,7 @@ include 'includes/header.php';
     "@type": "WebSite",
     "name": "Pocket Assistant",
     "url": "https://pocket-assistant.ru"
+    "logo": "https://pocket-assistant.ru/img/favicon.png"
   }
 }
 </script>

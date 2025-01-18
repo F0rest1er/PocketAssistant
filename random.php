@@ -37,5 +37,31 @@ include 'includes/header.php';
     </div>
 </div>
 
+<!-- Yandex.RTB R-A-13687682-3 -->
+<div id="yandex_rtb_R-A-13687682-3"></div>
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-13687682-3",
+        "renderTo": "yandex_rtb_R-A-13687682-3"
+    })
+})
+</script>
+
 <script src="/js/random.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Генератор случайных чисел - Pocket Assistant",
+  "description": "Генерируйте случайные числа с настраиваемыми параметрами с помощью Pocket Assistant.",
+  "url": "https://pocket-assistant.ru/random",
+  "mainEntity": {
+    "@type": "WebSite",
+    "name": "Pocket Assistant",
+    "url": "https://pocket-assistant.ru"
+    "logo": "https://pocket-assistant.ru/img/favicon.png"
+  }
+}
+</script>
 <?php include 'includes/footer.php'; ?> 

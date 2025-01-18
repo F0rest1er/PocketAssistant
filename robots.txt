@@ -9,3 +9,5 @@ Disallow: /img/
 Disallow: /site.webmanifest
 
 Allow: /
+
+Sitemap: https://www.pocket-assistant.ru/sitemap.xml

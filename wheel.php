@@ -35,5 +35,16 @@ include 'includes/header.php';
     </div>
 </div>
 
+<!-- Yandex.RTB R-A-13687682-6 -->
+<div id="yandex_rtb_R-A-13687682-6"></div>
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-13687682-6",
+        "renderTo": "yandex_rtb_R-A-13687682-6"
+    })
+})
+</script>
+
 <script src="/js/wheel.js"></script>
 <?php include 'includes/footer.php'; ?> 

@@ -17,6 +17,17 @@ include 'includes/header.php';
     </div>
 </div>
 
+<!-- Yandex.RTB R-A-13687682-7 -->
+<div id="yandex_rtb_R-A-13687682-7"></div>
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-13687682-7",
+        "renderTo": "yandex_rtb_R-A-13687682-7"
+    })
+})
+</script>
+
 <script src="/js/coin.js"></script>
 <script type="application/ld+json">
 {
@@ -29,6 +40,7 @@ include 'includes/header.php';
     "@type": "WebSite",
     "name": "Pocket Assistant",
     "url": "https://pocket-assistant.ru"
+    "logo": "https://pocket-assistant.ru/img/favicon.png"
   }
 }
 </script>

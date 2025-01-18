@@ -1,6 +1,8 @@
 <?php 
 $pageTitle = 'Проверка пароля - Pocket Assistant';
+$pageDescription = 'Безопасная проверка надежности пароля онлайн с помощью сайта Pocket Assistant.';
 $currentPage = 'check_password';
+$canonical = 'https://pocket-assistant.ru/check_password';
 include 'includes/header.php'; 
 ?>
 
@@ -49,6 +51,33 @@ include 'includes/header.php';
         </div>
     </div>
 </div>
+
+<!-- Yandex.RTB R-A-13687682-5 -->
+<div id="yandex_rtb_R-A-13687682-5"></div>
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-13687682-5",
+        "renderTo": "yandex_rtb_R-A-13687682-5"
+    })
+})
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Проверка пароля - Pocket Assistant",
+  "description": "Безопасная проверка надежности пароля онлайн.",
+  "url": "https://pocket-assistant.ru/check_password",
+  "mainEntity": {
+    "@type": "WebSite",
+    "name": "Pocket Assistant",
+    "url": "https://pocket-assistant.ru"
+    "logo": "https://pocket-assistant.ru/img/favicon.png"
+  }
+}
+</script>
 
 <script src="/js/check_password.js"></script>
 <?php include 'includes/footer.php'; ?> 
